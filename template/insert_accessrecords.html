@@ -14,8 +14,12 @@
             {% csrf_token %}
 
 
-            <label for="n">Name</label>
-            <input type="text" name="n" id="n"><br><br>
+            <label for="wo">Name</label>
+            <select name="wo" id="wo">
+                {% for a in wo %}
+                <option value="{{a}}">{{a.name}}</option>
+                {% endfor %}
+            </select><br><br>
 
 
 
@@ -32,6 +36,7 @@
 
             <input type="submit" value="insert_accessrecords">
 
+            
         </form>
 
 

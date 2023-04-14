@@ -11,14 +11,17 @@
     <h1> This is insert_webpage form</h1>
         <form action="" method="POST">
             {% csrf_token %}
-            <label for="tn">Topic_name</label>
-            <input type="text" name="tn" id="tn"><br><br>
 
 
-            <label for="n">name</label>
+
+            <label for="topic"> topic_name</label>
+            <select name="topic" id="topic">
+                {% for to in topic %}
+                <option value="{{to}}">{{to.topic_name}}</option>
+                {% endfor %}
+            </select><br><br>
+            <label for="n">Name</label>
             <input type="text" name="n" id="n"> <br><br>
-
-
 
             <label for="url1">url</label>
             <input type="url" name="url1" id="url1"> <br><br>
@@ -29,10 +32,9 @@
 
             
             <input type="submit" value="insert_webpage">
+            </form>
 
-        </form>
-
-
+           
 
     </center>
 </body>
